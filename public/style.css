@@ -1,0 +1,102 @@
+/* Reset and base style */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-image: url('images/bg.png');
+    color: #333;
+    padding: 40px;
+    text-align: center;
+}
+
+h1, h2 {
+    margin-bottom: 20px;
+    color: #f4f4f4;
+}
+
+a {
+    display: inline-block;
+    margin: 10px;
+    padding: 10px 20px;
+    text-decoration: none;
+    background-color: #2b2d42;
+    color: white;
+    border-radius: 8px;
+    transition: background 0.3s ease;
+}
+
+a:hover {
+    background-color: #4a4e69;
+}
+
+form {
+    max-width: 400px;
+    margin: 0 auto;
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+input, button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+
+button {
+    background-color: #2b2d42;
+    color: white;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+button:hover {
+    background-color: #4a4e69;
+}
+
+#bookings {
+    max-width: 600px;
+    margin: 30px auto;
+    text-align: left;
+}
+
+#bookings p {
+    background: #ffffff;
+    padding: 10px 15px;
+    margin: 10px 0;
+    border-radius: 6px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.confirmation-box {
+    color: #4CAF50;
+    text-align: center;
+    margin-top: 100px;
+    padding: 20px;
+}
+
+.home-btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 16px;
+    background-color: #4CAF50;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+}
+
+.home-btn:hover {
+    background-color: #45a049;
+}

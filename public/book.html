@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book an Appointment</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h2>Book Your Slot</h2>
+  <form id="booking-form">
+    <input type="text" name="name" placeholder="Your Name" required>
+    <input type="email" name="email" placeholder="Your Email" required>
+    <input type="date" name="date" required>
+    <input type="time" name="time" required>
+    <button type="submit">Book</button>
+  </form>
+
+  <script>
+    const form = document.getElementById('booking-form');
+
+    form.addEventListener('submit', function(event) {
+      event.preventDefault(); // Prevent the default form submission
+
+      const formData = new FormData(form);
+      const data = {};
+      formData.forEach((value, key) => {
+        data[key] = value;
+      });
+
+      // Send POST request using Fetch API
+      fetch('/book', {
+        method: 'POST',
+        body: new URLSearchParams(data)
+      })
+      .then(response => {
+        if (response.ok) {
+          window.location.href = 'success.html';  // Redirect to success page
+        } else {
+          alert('Booking failed, please try again later!');
+        }
+      })
+      .catch(err => {
+        console.error('Error:', err);
+        alert('Booking failed due to an error. Please try again.');
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>All Bookings</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h2>All Bookings</h2>
+  <div id="bookings">Loading bookings...</div>
+
+  <script>
+    fetch('/all-bookings')
+  .then(res => {
+    if (!res.ok) throw new Error("Network error");
+    return res.json();
+  })
+  .then(data => {
+    const div = document.getElementById('bookings');
+    div.innerHTML = '';
+    data.forEach(booking => {
+      const p = document.createElement('p');
+      p.textContent = `${booking.name} | ${booking.email} | ${booking.date} | ${booking.time}`;
+      div.appendChild(p);
+    });
+  })
+  .catch(err => {
+    document.getElementById('bookings').innerHTML = `<p style="color:red;">Failed to load bookings. ${err.message}</p>`;
+  });
+
+  </script>
+  
+</body>
+</html>
